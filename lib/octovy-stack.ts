@@ -197,8 +197,8 @@ export class OctovyStack extends cdk.Stack {
 
     const newLambda = (cfg: lambdaConfig): lambda.Function => {
       return new lambda.Function(this, cfg.id, {
-        runtime: lambda.Runtime.GO_1_X,
-        handler: "handler",
+        runtime: lambda.Runtime.PROVIDED_AL2,
+        handler: "bootstrap",
         role: lambdaRole,
         code: asset,
         timeout: cfg.timeout,
